@@ -38,6 +38,8 @@ class _MyAppState extends State<MyApp> {
                final settings = ValueNotifier(ThemeSettings(
                sourceColor:  Color(0xff00cbe6), // Replace this color
                themeMode: ThemeMode.system,
+               darkTheme: theme.dark(settings.value.sourceColor), // Add this line
+               themeMode: theme.themeMode(),
                 final colors = Theme.of(context).colorScheme;
                 ));
                },
