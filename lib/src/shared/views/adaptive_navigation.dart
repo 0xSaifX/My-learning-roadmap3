@@ -44,6 +44,14 @@ class AdaptiveNavigation extends StatelessWidget {
           ),
         );
       },
+       return Scaffold(
+          body: child,
+          bottomNavigationBar: NavigationBar(
+            destinations: destinations,
+            selectedIndex: selectedIndex,
+            onDestinationSelected: onDestinationSelected,
+          ),
+       );
     );
   }
 }
