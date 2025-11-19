@@ -35,14 +35,11 @@ class _MyAppState extends State<MyApp> {
              child: ValueListenableBuilder<ThemeSettings>(
                valueListenable: settings,
                builder: (context, value, _) {
-                 final theme = ThemeProvider.of(context); // Add this line
-                 return MaterialApp.router(
-                   debugShowCheckedModeBanner: false,
-                   title: 'Flutter Demo',
-                   theme: theme.light(settings.value.sourceColor), // Add this line
-                   routeInformationParser: appRouter.routeInformationParser,
-                   routerDelegate: appRouter.routerDelegate,
-                 );
+               final settings = ValueNotifier(ThemeSettings(
+               sourceColor:  Color(0xff00cbe6), // Replace this color
+               themeMode: ThemeMode.system,
+                final colors = Theme.of(context).colorScheme;
+                ));
                },
              ),
            )),
